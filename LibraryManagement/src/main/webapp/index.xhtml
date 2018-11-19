@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<h:body>
+	<div style="padding-left: 100px">
+		<h1>ADD A BOOK</h1>
+		<h:form style="width: 300px" action="insert" method="post">
+			<h:inputText class="form-control" type="text" id="isbnid"
+				value="#{beansForCrud.bookisbn}" name="givenisbn"
+				a:placeholder="Enter ISBN"></h:inputText>
+			<br />
+			<br />
+			<h:inputText type="text" name="giventitle"
+				value="#{beansForCrud.booktitle}" a:placeholder="Enter Book Title"
+				class="form-control" id="booktitleid"></h:inputText>
+			<br />
+			<br />
+			<h:inputText class="form-control" type="text" id="authorid"
+				value="#{beansForCrud.bookauthor}" name="givenauthor"
+				a:placeholder="Enter Author Name"></h:inputText>
+			<br />
+			<br />
+			<h:inputText type="text" class="form-control" id="priceid"
+				value="#{beansForCrud.bookprice}" name="givenprice"
+				a:placeholder="Enter Price"></h:inputText>
+			<br />
+			<br />
+			<h:inputText class="form-control" type="text" id="catid"
+				value="#{beansForCrud.bookquantity}" name="givencat"
+				a:placeholder="Enter quantity"></h:inputText>
+			<br />
+			<br />
+			<br />
+			<h:commandButton type="submit" class="btn btn-primary"
+				action="#{beansForCrud.insertNow}" value="Save Book">
+			</h:commandButton>
+			<br />
+
+		</h:form>
+	</div>
+</h:body>
+
+</html>
