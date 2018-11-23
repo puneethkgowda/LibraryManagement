@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<head>
+<title><ui:insert name="title">Default title</ui:insert></title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+
+<h:body>
+	<ui:include src="headernav.xhtml"></ui:include>
+	<div style="padding-left: 100px">
+		<h1>UPDATE BOOK DETAILS BY ISBN</h1>
+		<form style="width: 300px">
+			<h3>Enter ISBN to update its details</h3>
+			<h:outputText>Enter ISBN to Update </h:outputText>
+			<h:inputText class="form-control" type="text" id="isbnid"
+				a:placeholder="ISBN here"></h:inputText>
+			<br /> <br />
+			<button class="btn btn-info" type="button" onclick="getdetails()">GET
+				DETAILS</button>
+			<br /> <br /> <br />
+			<h:outputText>Update Book Title </h:outputText>
+			<h:inputText class="form-control" type="text" id="titleid"></h:inputText>
+			<br /> <br />
+			<h:outputText>Update Book Author </h:outputText>
+			<h:inputText type="text" class="form-control" id="authorid"></h:inputText>
+			<br /> <br />
+			<h:outputText>Update
+				Book Price </h:outputText>
+			<h:inputText class="form-control" type="text" id="priceid"></h:inputText>
+			<br /> <br />
+			<h:commandButton class="btn btn-info" type="button"
+				onclick="updateit()" value="Update This Book"></h:commandButton>
+		</form>
+	</div>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/query.js"></script>
+</h:body>
+
+</html>
