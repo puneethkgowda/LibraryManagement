@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC
-"-//Hibernate/Hibernate Mapping DTD//EN"
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
     <class name="Hibernate.HibernateMavenTest.User" table="USERS">
         <id name="userId" type="int" column="USER_ID">
-            <generator class="assigned"/>
+            <generator class="sequence"/>
         </id>
         <property name="username">
             <column name="USERNAME"/>
@@ -17,5 +16,9 @@
         <property name="createdDate" type="date">
             <column name="CREATED_DATE"/>
         </property>
+        <set name="books" table="USER_BOOKS" fetch="select" lazy="true" cascade="all" >
+			<key column="USER_ID" />
+			<many-to-many class="Hibernate.HibernateMavenTest.Book" column="BOOK_ID" />
+		</set>
     </class>
 </hibernate-mapping>

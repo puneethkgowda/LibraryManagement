@@ -1,12 +1,14 @@
 package Hibernate.HibernateMavenTest;
 
 import java.util.Date;
+import java.util.Set;
 
 public class User {
     private int userId;
     private String username;
     private String createdBy;
     private Date createdDate;
+    private Set<Book> books;
  
     public String getUsername() {
         return username;
@@ -39,5 +41,14 @@ public class User {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+    
+    public Set<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(Set<Book> books) {
+		this.books = books;
+	}
+
  
 }

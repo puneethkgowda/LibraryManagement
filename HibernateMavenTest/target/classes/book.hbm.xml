@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Hibernate.HibernateMavenTest.Book" table="BOOKS">
+        <id name="bookId" type="int" column="BOOK_ID">
+            <generator class="sequence" />
+        </id>
+        <property name="bookname">
+            <column name="BOOKNAME" />
+        </property>
+        <property name="author">
+            <column name="AUTHOR" />
+        </property>
+        <set name="users" table="USER_BOOKS" fetch="select" lazy="true" cascade="all">
+            <key column="BOOK_ID" />
+            <many-to-many class="Hibernate.HibernateMavenTest.User" column="USER_ID"/>
+        </set>
+    </class>
+</hibernate-mapping>
