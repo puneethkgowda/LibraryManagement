@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:cc="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<head>
+<title><ui:insert name="title">All books</ui:insert></title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<h:body>
+	<ui:include src="headernav.xhtml"></ui:include>
+	<div style="padding-left: 100px">
+		<h2>SHOW ALL LIBRARY DATA</h2>
+		<br />
+		<h:form>
+			<table class="table" id="mytable"
+				style="table-layout: fixed; width: 100%;">
+				<thead>
+					<tr>
+						<th>ISBN</th>
+						<th>BOOK TITLE</th>
+						<th>BOOK Author</th>
+						<th>$Price $</th>
+						<th>Quantity</th>
+						<th>Admin Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<ui:repeat value="#{bookCrudController.bookbean}" var="e">
+						<tr>
+							<td>#{e.bookisbn}</td>
+							<td><h:outputText value="#{e.booktitle}"
+									rendered="#{!e.update}"></h:outputText> <h:inputText
+									value="#{e.booktitle}" rendered="#{e.update}"
+									class="form-control"></h:inputText></td>
+							<td><h:outputText value="#{e.bookauthor}"
+									rendered="#{!e.update}"></h:outputText> <h:inputText
+									value="#{e.bookauthor}" rendered="#{e.update}"
+									class="form-control"></h:inputText></td>
+
+							<td><h:outputText value="#{e.bookprice}"
+									rendered="#{!e.update}"></h:outputText> <h:inputText
+									value="#{e.bookprice}" rendered="#{e.update}"
+									class="form-control"></h:inputText></td>
+
+							<td><h:outputText value="#{e.bookquantity}"
+									rendered="#{!e.update}"></h:outputText> <h:inputText
+									value="#{e.bookquantity}" rendered="#{e.update}"
+									class="form-control"></h:inputText></td>
+							<td><h:commandButton class="btn btn-info" value="Edit"
+									action="#{bookCrudController.updateRow(e)}"
+									rendered="#{!e.update}">
+									<cc:ajax render="@form" execute="@this" />
+								</h:commandButton> <h:commandButton class="btn btn-primary"
+									action="#{bookCrudController.saveBook()}" value="Save Changes"
+									rendered="#{e.update}">
+									<cc:ajax render="@form" execute="@this" />
+								</h:commandButton> <h:commandButton style="margin-left:10px;"
+									class="btn btn-danger"
+									action="#{bookCrudController.deleteBook(e)}" value="Delete">
+									<cc:ajax render="@form" execute="@this" />
+								</h:commandButton></td>
+						</tr>
+					</ui:repeat>
+				</tbody>
+			</table>
+		</h:form>
+	</div>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/query.js"></script>
+</h:body>
+</html>
