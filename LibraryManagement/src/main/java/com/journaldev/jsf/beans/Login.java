@@ -57,7 +57,7 @@ public class Login implements Serializable {
 		if (valid) {
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("username", user);
-			return "index";
+			return "viewbooks";
 		} else {
 			FacesContext.getCurrentInstance().addMessage(
 					null,

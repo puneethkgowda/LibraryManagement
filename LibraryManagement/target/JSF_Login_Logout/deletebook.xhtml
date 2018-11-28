@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<h:body>
+	<ui:include src="headernav.xhtml"></ui:include>
+	<div style="padding-left: 100px">
+		<h1>delete A BOOK</h1>
+		<h:form style="width: 300px">
+			<!-- <h:selectOneMenu class="form-control" name="cars" id="byy">
+				<c:selectItem itemLabel="Delete by ISBN" itemValue=""></c:selectItem>
+				<c:selectItem itemLabel="Delete by Book Title" itemValue=""></c:selectItem>
+				<c:selectItem itemLabel="Delete by Book Author" itemValue=""></c:selectItem>
+			</h:selectOneMenu>
+			<br /> -->
+			<br />
+			<h:inputText class="form-control" type="text" id="isbnid"
+				a:placeholder="Enter ISBN to Delete"></h:inputText>
+			<br />
+			<br />
+		</h:form>
+		<h:commandButton type="submit" class="btn btn-danger"
+			value="Delete This Book"></h:commandButton>
+	</div>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/query.js"></script>
+</h:body>
+
+</html>

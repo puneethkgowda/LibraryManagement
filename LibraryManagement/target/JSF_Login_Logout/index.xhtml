@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:uii="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title><ui:insert name="title">Add a Book</ui:insert></title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<h:body>
+	<uii:include src="headernav.xhtml"></uii:include>
+	<div style="padding-left: 100px">
+		<h1>ADD A BOOK</h1>
+		<h:form style="width: 500px" action="insert" method="post">
+			<table cellpadding="20" border="0">
+				<tr>
+					<td>Enter Book ISBN</td>
+					<td><h:inputText class="form-control" type="text" id="isbnid"
+							value="#{beansForCrud.bookisbn}" name="givenisbn"
+							a:placeholder="ISBN"></h:inputText></td>
+				</tr>
+				<tr>
+					<td>Enter Book Title</td>
+					<td><h:inputText type="text" name="giventitle"
+							value="#{beansForCrud.booktitle}" a:placeholder="Book Title"
+							class="form-control" id="booktitleid"></h:inputText></td>
+				</tr>
+
+				<tr>
+					<td>Enter Book Author</td>
+					<td><h:inputText class="form-control" type="text"
+							id="authorid" value="#{beansForCrud.bookauthor}"
+							name="givenauthor" a:placeholder="Author Name"></h:inputText></td>
+				</tr>
+
+				<tr>
+					<td>Enter Book Price</td>
+					<td><h:inputText type="text" class="form-control" id="priceid"
+							value="#{beansForCrud.bookprice}" name="givenprice"
+							a:placeholder="Price"></h:inputText></td>
+				</tr>
+
+				<tr>
+					<td>Enter Book Quantity</td>
+					<td><h:inputText class="form-control" type="text" id="catid"
+							value="#{beansForCrud.bookquantity}" name="givencat"
+							a:placeholder="quantity"></h:inputText></td>
+				</tr>
+			</table>
+			<br />
+			<h:commandButton type="submit" class="btn btn-primary"
+				action="#{bookCrudController.insertRow}" value="Save Book">
+				<c:ajax render="@form" execute="@this" />
+			</h:commandButton>
+			<br />
+
+		</h:form>
+	</div>
+	<!-- <script>
+		function saveit() {
+			<%String respo = (String) request.getAttribute("status");
+			if (respo == "no") {%>
+			alert("Sorry UnSuccessfull");
+			<%} else if (respo == "yes") {%>
+			alert("Successfull Added");
+			<%}%>
+		}
+	</script> -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/query.js"></script>
+</h:body>
+
+</html>
