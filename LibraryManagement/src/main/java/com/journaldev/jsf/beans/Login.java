@@ -69,16 +69,20 @@ public class Login implements Serializable {
 	//validate login
 	public String validateUsernamePassword() {
 		boolean valid = false;
+		UserBean bb = new UserBean();
 		try {
-			valid = LoginDAO.validate(user, pwd);
+			bb = LoginDAO.validate(user, pwd);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (valid) {
+		if (bb != null) {
 			HttpSession session = SessionUtils.getSession();
-			session.setAttribute("username", user);
-			return "index";
+			session.setAttribute("username", bb.getUsername());
+			if(bb.getRole().equals("admin")) {
+				return "viewusers";
+			}
+			return "viewbooks";
 		} else {
 			FacesContext.getCurrentInstance().addMessage(
 					null,

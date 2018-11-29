@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: ankitar
 Build-Jdk: 1.8.0_181
+=======
+Built-By: baseemuddinh
+Build-Jdk: 1.8.0_191
+>>>>>>> origin/develop
 Created-By: Maven Integration for Eclipse
 

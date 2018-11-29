@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="#">Library Management</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarNav" aria-controls="navbarNav"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+		<li class="nav-item"><a class="nav-link active"
+				href="http://localhost:8080/JSF_Login_Logout/faces/ViewUsers.xhtml">View
+					Users</a></li>
+					<li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/JSF_Login_Logout/faces/AddUser.xhtml">Add
+					Users</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/JSF_Login_Logout/faces/addbook.xhtml">Add
+					Books </a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/JSF_Login_Logout/faces/viewbooks.xhtml">View
+					Book</a></li>
+		</ul>
+	</div>
+	<h:outputLabel value="#{connectionStatusBean.status}"></h:outputLabel>
+	</nav>
+</h:body>
+
+</html>
+<!-- <%
+			ConnectToODB dbcm = new ConnectToODB();
+			Connection conn = dbcm.getConnResult();
+			if (conn == null) {
+				out.println("Failed");
+			} else {
+				out.println("Connection Success with OJDBC");
+			}
+		%> -->

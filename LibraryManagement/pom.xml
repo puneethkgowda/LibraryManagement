@@ -55,6 +55,13 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+
+	<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc8</artifactId> 
+		<version>12.2.0.1</version> </dependency> --> 
+>>>>>>> origin/develop
 	</dependencies>
 
 	<build>

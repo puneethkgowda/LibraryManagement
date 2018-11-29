@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.journaldev.jsf.util.SessionUtils;
+import com.journaldev.jsf.beans.UserBean;
 import com.journaldev.jsf.dao.LoginDAO;
 
 public class authservlet extends HttpServlet {
@@ -18,35 +19,33 @@ public class authservlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
-		
-		if (request.getParameter("username") == "" || request.getParameter("password") == ""
-				) {
+		if (request.getParameter("username") == "" || request.getParameter("password") == "") {
 			System.out.println("empty");
 			request.setAttribute("status", "no");
 		} else {
-			
-			String user = (String) request.getParameter("username");
+
+			String username = (String) request.getParameter("username");
 			String pwd = (String) request.getParameter("password");
-			boolean valid = false;
+			UserBean user = null;
 			try {
-				valid = LoginDAO.validate(user, pwd);
+				user = LoginDAO.validate(username, pwd);
 			} catch (Exception e) {
 				request.setAttribute("status", "no");
 			}
-			if (valid) {
+			if (user != null) {
 				HttpSession session = SessionUtils.getSession();
 				session.setAttribute("username", user);
 				request.setAttribute("status", "yes");
-				getServletContext().getRequestDispatcher("/index.xhtml").forward(request, response);
-				//resp.sendRedirect(reqt.getContextPath() + "/faces/login.xhtml");
+				getServletContext().getRequestDispatcher("/viewbooks.xhtml").forward(request, response);
+				// resp.sendRedirect(reqt.getContextPath() + "/faces/login.xhtml");
 			} else {
 				request.setAttribute("status", "no");
 			}
-		
+
 		}
-		//getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-		//resp.sendRedirect(reqt.getContextPath() + "/faces/login.xhtml");
+		// getServletContext().getRequestDispatcher("/index.jsp").forward(request,
+		// response);
+		// resp.sendRedirect(reqt.getContextPath() + "/faces/login.xhtml");
 
 	}
 
