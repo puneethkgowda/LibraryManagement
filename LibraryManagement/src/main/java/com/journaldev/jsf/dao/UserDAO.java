@@ -18,6 +18,7 @@ import com.journaldev.jsf.util.DataConnect;
 
 import oracle.jdbc.OracleTypes;
 
+
 public class UserDAO {
 
 	private Connection connection;

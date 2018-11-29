@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>User Books</title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+	<h:form style="padding:20px">
+		<h4>USER BOOK DETAILS</h4>
+		<br />
+		
+		<b><h:outputLabel>User Name :</h:outputLabel></b>&nbsp;
+		<h:outputLabel>#{login.user}</h:outputLabel>
+		<br />
+		
+		<b><h:outputLabel>User ID :</h:outputLabel></b>&nbsp;
+		<h:outputLabel>#{login.userId}</h:outputLabel>
+		<br />
+		
+		<b><h:outputLabel>User Role :</h:outputLabel></b>&nbsp;
+		<h:outputLabel>#{login.userRole}</h:outputLabel>
+		<br />
+		<br />
+		
+		<b><h:outputLabel>Books :</h:outputLabel></b>&nbsp;
+		<h:outputText value="No records found!" rendered="#{empty userBooks.userBooks}" />
+		
+		<h:dataTable value="#{userBooks.userBooks}" var="ub" styleClass="table" headerClass="table-dark"
+			rowClasses="table-bordered" rendered="#{not empty userBooks.userBooks}">
+			<h:column>
+				<f:facet name="header">Book ISBN</f:facet>
+                    #{ub.bookisbn}</h:column>
+			<h:column>
+				<f:facet name="header" sortBy="#{bookdetails.booktitle}">Book Name</f:facet>
+                    #{ub.booktitle}</h:column>
+			<h:column>
+				<f:facet name="header">Book Author</f:facet>
+                    #{ub.bookauthor}</h:column>
+		</h:dataTable>
+		<br />
+		
+		<h:button title="borrowBooks" class="btn btn-primary" value="Borrow Books" outcome="bookdetails" />
+		
+	</h:form>
+</h:body>
+
+</html>
