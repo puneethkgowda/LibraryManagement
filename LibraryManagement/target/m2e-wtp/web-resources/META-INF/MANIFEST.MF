@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD:Maven_Library_ODB/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 Built-By: ankitar
 Build-Jdk: 1.8.0_181
-=======
-Built-By: mohamedj
-Build-Jdk: 1.8.0_131
->>>>>>> 2a7f3e80bdde5eadc0422b6b2704acfcb36cf89c:LibraryManagement/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 Created-By: Maven Integration for Eclipse
 
