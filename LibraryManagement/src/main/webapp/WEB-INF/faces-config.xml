@@ -12,14 +12,13 @@
 			<to-view-id>/admin.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
-<<<<<<< HEAD
 			<from-outcome>index</from-outcome>
 			<to-view-id>/userbooks.xhtml</to-view-id>
-			<redirect/>
-=======
+			<redirect />
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>viewbooks</from-outcome>
 			<to-view-id>/viewbooks.xhtml</to-view-id>
->>>>>>> origin/develop
 		</navigation-case>
 	</navigation-rule>
 

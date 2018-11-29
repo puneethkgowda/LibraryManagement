@@ -11,13 +11,10 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-<<<<<<< HEAD:LibraryManagement/src/main/java/com/journaldev/jsf/beans/BeansForCrud.java
 import com.journaldev.jsf.dao.CrudBookBasee;
 import com.journaldev.jsf.util.SessionUtils;
-=======
 import com.journaldev.jsf.dao.BookDao;
 
->>>>>>> origin/develop:LibraryManagement/src/main/java/com/journaldev/jsf/beans/BookBeans.java
 
 @ManagedBean(name = "bookrecords", eager = true)
 @RequestScoped
@@ -26,11 +23,9 @@ public class BookBeans {
 	private String booktitle;
 	private String bookauthor;
 	private int bookprice;
-<<<<<<< HEAD:LibraryManagement/src/main/java/com/journaldev/jsf/beans/BeansForCrud.java
-	private BigDecimal bookquantity;
+	private BigDecimal bookquantity1;
 	private String error = "";
-	private ArrayList<BeansForCrud> books = new ArrayList<BeansForCrud>();
-=======
+	private ArrayList<BookBeans> books = new ArrayList<BookBeans>();
 	private int bookquantity;
 	private boolean update;
 
@@ -40,28 +35,27 @@ public class BookBeans {
 	public boolean isUpdate() {
 		return update;
 	}
->>>>>>> origin/develop:LibraryManagement/src/main/java/com/journaldev/jsf/beans/BookBeans.java
 
 	public void setUpdate(boolean update) {
 		this.update = update;
 	}
 
-	public BeansForCrud(int bookisbn, String booktitle, String bookauthor, int bookprice, BigDecimal bookquantity) {
+	public BookBeans(int bookisbn, String booktitle, String bookauthor, int bookprice, BigDecimal bookquantity) {
 		this.bookisbn = bookisbn;
 		this.booktitle = booktitle;
 		this.bookauthor = bookauthor;
 		this.bookprice = bookprice;
-		this.bookquantity = bookquantity;
+		this.bookquantity1 = bookquantity;
 	}
 
-	public ArrayList<BeansForCrud> getBooks() {
-		ArrayList<BeansForCrud> al = new ArrayList<BeansForCrud>();
+	public ArrayList<BookBeans> getBooks() {
+		ArrayList<BookBeans> al = new ArrayList<BookBeans>();
 		CrudBookBasee crudbookbasee = new CrudBookBasee();
 		try {
 
 			ResultSet userLendingBooks = crudbookbasee.GetUserBooksForLending(SessionUtils.getUserId());
 			while (userLendingBooks.next()) {
-				al.add(new BeansForCrud(userLendingBooks.getInt(1), userLendingBooks.getString(2),
+				al.add(new BookBeans(userLendingBooks.getInt(1), userLendingBooks.getString(2),
 						userLendingBooks.getString(3), userLendingBooks.getInt(4), userLendingBooks.getBigDecimal(5)));
 			}
 		} catch (SQLException e) {
@@ -72,7 +66,7 @@ public class BookBeans {
 		return al;
 	}
 
-	public void setBooks(ArrayList<BeansForCrud> books) {
+	public void setBooks(ArrayList<BookBeans> books) {
 		this.books = books;
 	}
 
@@ -129,7 +123,6 @@ public class BookBeans {
 		crudbookbasee.insertnow(getBookisbn(), getBooktitle(), getBookauthor(), getBookprice(), getBookquantity());
 	}
 
-<<<<<<< HEAD:LibraryManagement/src/main/java/com/journaldev/jsf/beans/BeansForCrud.java
 	public void borrowSelectedBooks() {
 		try {
 			HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext()
@@ -148,12 +141,10 @@ public class BookBeans {
 			this.error = e.getMessage();
 		}
 	}
-=======
+
 	@Override
 	public String toString() {
 		return "BookBeans [bookisbn=" + bookisbn + ", booktitle=" + booktitle + ", bookauthor=" + bookauthor
-				+ ", bookprice=" + bookprice + ", bookquantity=" + bookquantity + ", update=" + update + "]";
+				+ ", bookprice=" + bookprice + ", bookquantity=" + bookquantity1 + ", update=" + update + "]";
 	}
-
->>>>>>> origin/develop:LibraryManagement/src/main/java/com/journaldev/jsf/beans/BookBeans.java
 }
