@@ -20,6 +20,8 @@ public class Login implements Serializable {
 	private String pwd;
 	private String msg;
 	private String user;
+	private String userId; 
+	private String userRole;
 
 	public String getPwd() {
 		return pwd;
@@ -43,6 +45,25 @@ public class Login implements Serializable {
 
 	public void setUser(String user) {
 		this.user = user;
+	}
+	
+	public String getUserRole() {
+		userRole = SessionUtils.getUserRole();
+		return userRole;
+	}
+	
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
+	
+	public String getUserId() {
+		userId = SessionUtils.getUserId();
+		return userId;
+	}
+	
+	public void setUserId(String userId)
+	{
+		this.userId = userId;
 	}
 
 	//validate login
