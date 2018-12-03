@@ -15,18 +15,19 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
-		<h:link class="nav-item" rendered="#{role == 'admin'}"><a class="nav-link active"
-				href="http://localhost:8083/JSF_Login_Logout/faces/ViewUsers.xhtml">View
-					Users</a></h:link>
-					<h:link class="nav-item" rendered="#{userBean.getRole() eq 'admin'}"><a class="nav-link"
-				href="http://localhost:8083/JSF_Login_Logout/faces/AddUser.xhtml">Add
-					Users</a></h:link>
-			<h:link class="nav-item" rendered="#{userBean.getRole() eq '123'}"><a class="nav-link"
-				href="http://localhost:8083/JSF_Login_Logout/faces/addbook.xhtml">Add
-					Books </a></h:link>
-			<h:link class="nav-item" rendered="#{userBean.getRole() eq '132'}"><a class="nav-link"
-				href="http://localhost:8083/JSF_Login_Logout/faces/viewbooks.xhtml">View
-					Books</a></h:link>
+
+			<li class="nav-item"><a class="nav-link active"
+				href="http://localhost:8080/JSF_Login_Logout/faces/ViewUsers.xhtml">View
+					Users</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/JSF_Login_Logout/faces/AddUser.xhtml">Add
+					User</a></li>
+      <li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/JSF_Login_Logout/faces/viewbooks.xhtml">View
+					Books</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/JSF_Login_Logout/faces/addbook.xhtml">Add
+					Book </a></li>
 		</ul>
 	</div>
 	
