@@ -16,28 +16,18 @@
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
-  <servlet>
-    <description>
-		</description>
-    <display-name>bkinsertservlet</display-name>
-    <servlet-name>bkinsertservlet</servlet-name>
-    <servlet-class>Servletspack.bkinsertservlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>bkinsertservlet</servlet-name>
-    <url-pattern>/insert</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description>
-		</description>
-    <display-name>authservlet</display-name>
-    <servlet-name>authservlet</servlet-name>
-    <servlet-class>Servletspack.authservlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>authservlet</servlet-name>
-    <url-pattern>/validate</url-pattern>
-  </servlet-mapping>
+  
+<!--   <servlet> -->
+<!--     <description> -->
+<!-- 		</description> -->
+<!--     <display-name>authservlet</display-name> -->
+<!--     <servlet-name>authservlet</servlet-name> -->
+<!--     <servlet-class>Servletspack.authservlet</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>authservlet</servlet-name> -->
+<!--     <url-pattern>/validate</url-pattern> -->
+<!--   </servlet-mapping> -->
   <welcome-file-list>
     <welcome-file>login.xhtml</welcome-file>
   </welcome-file-list>

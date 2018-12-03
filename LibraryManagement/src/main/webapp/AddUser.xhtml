@@ -6,10 +6,10 @@
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<h:head>
+<head>
 	<title><ui:insert name="title">Default title</ui:insert></title>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-</h:head>
+</head>
 
 <h:body>
 <ui:include src="headernav.xhtml"></ui:include>
@@ -28,8 +28,8 @@
 			<br />
 			
 			<h:selectOneMenu value = "#{userBean.role}" name="role" id="roleid" class="form-control"> 
-			   <c:selectItem itemValue = "1" itemLabel = "Admin" /> 
-			   <c:selectItem itemValue = "2" itemLabel = "Member" /> 
+			   <c:selectItem itemValue = "admin" itemLabel = "Admin" /> 
+			   <c:selectItem itemValue = "member" itemLabel = "Member" /> 
 			</h:selectOneMenu> 
 			<br />
 			<br />
